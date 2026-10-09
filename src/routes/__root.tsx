@@ -123,6 +123,7 @@ function RootComponent() {
         <main><Outlet /></main>
         <footer className="mx-auto max-w-6xl px-4 py-10 text-center text-xs text-muted-foreground">
           Quantapad · QMS Testnet preview — the network may be reset. Not financial advice.
+          <span className="fixed bottom-4 right-4 z-50">@geewin</span>
         </footer>
       </WalletProvider>
     </QueryClientProvider>
