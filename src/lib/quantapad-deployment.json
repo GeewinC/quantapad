@@ -1,0 +1,1061 @@
+{
+ "chainId": 19480,
+ "portal": "0x719B975A6E0d76dD41207b498ed61F848aD3Bce2",
+ "tokenImplementation": "0x11EbFA13a920D8647Ebbf99Cd00D31C1a81c062d",
+ "deployer": "0xb420CB7F24bc1eF048a13a3e2163b8A8aBf519FA",
+ "abi": {
+  "portal": [
+   {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "creator",
+      "type": "address"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "amount",
+      "type": "uint256"
+     }
+    ],
+    "name": "CreatorClaimed",
+    "type": "event"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": false,
+      "internalType": "bool",
+      "name": "paused",
+      "type": "bool"
+     }
+    ],
+    "name": "Paused",
+    "type": "event"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     },
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "creator",
+      "type": "address"
+     },
+     {
+      "indexed": false,
+      "internalType": "string",
+      "name": "name",
+      "type": "string"
+     },
+     {
+      "indexed": false,
+      "internalType": "string",
+      "name": "symbol",
+      "type": "string"
+     },
+     {
+      "indexed": false,
+      "internalType": "string",
+      "name": "uri",
+      "type": "string"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint16",
+      "name": "buyTaxBps",
+      "type": "uint16"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint16",
+      "name": "sellTaxBps",
+      "type": "uint16"
+     },
+     {
+      "components": [
+       {
+        "internalType": "uint16",
+        "name": "creator",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "burn",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "dividends",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "liquidity",
+        "type": "uint16"
+       }
+      ],
+      "indexed": false,
+      "internalType": "struct QuantapadPortal.Split",
+      "name": "split",
+      "type": "tuple"
+     }
+    ],
+    "name": "TokenCreated",
+    "type": "event"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     },
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "trader",
+      "type": "address"
+     },
+     {
+      "indexed": false,
+      "internalType": "bool",
+      "name": "isBuy",
+      "type": "bool"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "qms",
+      "type": "uint256"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "tokens",
+      "type": "uint256"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "tax",
+      "type": "uint256"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "vQms",
+      "type": "uint256"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "vTok",
+      "type": "uint256"
+     }
+    ],
+    "name": "Trade",
+    "type": "event"
+   },
+   {
+    "inputs": [],
+    "name": "DEAD",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "MAX_TAX_BPS",
+    "outputs": [
+     {
+      "internalType": "uint16",
+      "name": "",
+      "type": "uint16"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "PROTOCOL_CUT_PCT",
+    "outputs": [
+     {
+      "internalType": "uint16",
+      "name": "",
+      "type": "uint16"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "name": "allTokens",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "minOut",
+      "type": "uint256"
+     }
+    ],
+    "name": "buy",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "claimCreatorFees",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "string",
+      "name": "n",
+      "type": "string"
+     },
+     {
+      "internalType": "string",
+      "name": "s",
+      "type": "string"
+     },
+     {
+      "internalType": "string",
+      "name": "u",
+      "type": "string"
+     },
+     {
+      "internalType": "uint16",
+      "name": "buyTax",
+      "type": "uint16"
+     },
+     {
+      "internalType": "uint16",
+      "name": "sellTax",
+      "type": "uint16"
+     },
+     {
+      "components": [
+       {
+        "internalType": "uint16",
+        "name": "creator",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "burn",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "dividends",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "liquidity",
+        "type": "uint16"
+       }
+      ],
+      "internalType": "struct QuantapadPortal.Split",
+      "name": "sp",
+      "type": "tuple"
+     }
+    ],
+    "name": "createToken",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "name": "creatorFees",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "implementation",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "name": "markets",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "creator",
+      "type": "address"
+     },
+     {
+      "internalType": "uint16",
+      "name": "buyTaxBps",
+      "type": "uint16"
+     },
+     {
+      "internalType": "uint16",
+      "name": "sellTaxBps",
+      "type": "uint16"
+     },
+     {
+      "components": [
+       {
+        "internalType": "uint16",
+        "name": "creator",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "burn",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "dividends",
+        "type": "uint16"
+       },
+       {
+        "internalType": "uint16",
+        "name": "liquidity",
+        "type": "uint16"
+       }
+      ],
+      "internalType": "struct QuantapadPortal.Split",
+      "name": "split",
+      "type": "tuple"
+     },
+     {
+      "internalType": "uint256",
+      "name": "vQms",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint256",
+      "name": "vTok",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint256",
+      "name": "reserve",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
+     {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "protocolFees",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "qmsIn",
+      "type": "uint256"
+     }
+    ],
+    "name": "quoteBuy",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "out",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint256",
+      "name": "tax",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "tokIn",
+      "type": "uint256"
+     }
+    ],
+    "name": "quoteSell",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "out",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint256",
+      "name": "tax",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "tokIn",
+      "type": "uint256"
+     },
+     {
+      "internalType": "uint256",
+      "name": "minOut",
+      "type": "uint256"
+     }
+    ],
+    "name": "sell",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "bool",
+      "name": "p",
+      "type": "bool"
+     }
+    ],
+    "name": "setPaused",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "uint256",
+      "name": "v",
+      "type": "uint256"
+     }
+    ],
+    "name": "setVirtualQms",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "tokenCount",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "o",
+      "type": "address"
+     }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "virtualQms",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+     }
+    ],
+    "name": "withdrawProtocolFees",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "stateMutability": "payable",
+    "type": "receive"
+   }
+  ],
+  "token": [
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "owner",
+      "type": "address"
+     },
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "spender",
+      "type": "address"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "value",
+      "type": "uint256"
+     }
+    ],
+    "name": "Approval",
+    "type": "event"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "holder",
+      "type": "address"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "amount",
+      "type": "uint256"
+     }
+    ],
+    "name": "DividendClaimed",
+    "type": "event"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "amount",
+      "type": "uint256"
+     }
+    ],
+    "name": "DividendsDistributed",
+    "type": "event"
+   },
+   {
+    "anonymous": false,
+    "inputs": [
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "from",
+      "type": "address"
+     },
+     {
+      "indexed": true,
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+     },
+     {
+      "indexed": false,
+      "internalType": "uint256",
+      "name": "value",
+      "type": "uint256"
+     }
+    ],
+    "name": "Transfer",
+    "type": "event"
+   },
+   {
+    "inputs": [],
+    "name": "SUPPLY",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "h",
+      "type": "address"
+     }
+    ],
+    "name": "accumulated",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     },
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "name": "allowance",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "sp",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "v",
+      "type": "uint256"
+     }
+    ],
+    "name": "approve",
+    "outputs": [
+     {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+     }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "uint256",
+      "name": "v",
+      "type": "uint256"
+     }
+    ],
+    "name": "burn",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "claim",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "h",
+      "type": "address"
+     }
+    ],
+    "name": "claimable",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [
+     {
+      "internalType": "uint8",
+      "name": "",
+      "type": "uint8"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "distribute",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "dividendSupply",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "string",
+      "name": "n",
+      "type": "string"
+     },
+     {
+      "internalType": "string",
+      "name": "s",
+      "type": "string"
+     },
+     {
+      "internalType": "string",
+      "name": "u",
+      "type": "string"
+     }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "magPerShare",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "name",
+    "outputs": [
+     {
+      "internalType": "string",
+      "name": "",
+      "type": "string"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "portal",
+    "outputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "symbol",
+    "outputs": [
+     {
+      "internalType": "string",
+      "name": "",
+      "type": "string"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "totalSupply",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "v",
+      "type": "uint256"
+     }
+    ],
+    "name": "transfer",
+    "outputs": [
+     {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+     }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "f",
+      "type": "address"
+     },
+     {
+      "internalType": "address",
+      "name": "to",
+      "type": "address"
+     },
+     {
+      "internalType": "uint256",
+      "name": "v",
+      "type": "uint256"
+     }
+    ],
+    "name": "transferFrom",
+    "outputs": [
+     {
+      "internalType": "bool",
+      "name": "",
+      "type": "bool"
+     }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+   },
+   {
+    "inputs": [],
+    "name": "uri",
+    "outputs": [
+     {
+      "internalType": "string",
+      "name": "",
+      "type": "string"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   },
+   {
+    "inputs": [
+     {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+     }
+    ],
+    "name": "withdrawn",
+    "outputs": [
+     {
+      "internalType": "uint256",
+      "name": "",
+      "type": "uint256"
+     }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+   }
+  ]
+ }
+}
