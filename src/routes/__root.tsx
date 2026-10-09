@@ -128,28 +128,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-function RootDocument({ children }: { children: React.ReactNode }) {
-  return (
-    <html>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <div
-          style={{
-            position: 'fixed',
-            bottom: 16,
-            left: 16,
-            zIndex: 9999,
-            fontSize: 12,
-            color: '#737373',
-          }}
-        >
-          @geewin
-        </div>
-        <Scripts />
-      </body>
-    </html>
-  )
-}
