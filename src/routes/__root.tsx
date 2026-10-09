@@ -128,7 +128,28 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
-<footer className="fixed bottom-4 left-4 z-50 text-xs text-neutral-500">
-  @Geewin
-</footer>
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <div
+          style={{
+            position: 'fixed',
+            bottom: 16,
+            left: 16,
+            zIndex: 9999,
+            fontSize: 12,
+            color: '#737373',
+          }}
+        >
+          @geewin
+        </div>
+        <Scripts />
+      </body>
+    </html>
+  )
+}
