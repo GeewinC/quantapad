@@ -128,3 +128,7 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
+<footer className="fixed bottom-4 left-4 z-50 text-xs text-neutral-500">
+  @Geewin
+</footer>
